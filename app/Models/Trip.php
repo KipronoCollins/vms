@@ -19,6 +19,10 @@ class Trip extends Model
         'odoMeterStart',
         'odoMeterEnd',
         'amount',
+        'mileage',
+        'journeyStart',
+        'journeyEnd',
+        'createdBy',
     ];
 
     public function vehicle()
