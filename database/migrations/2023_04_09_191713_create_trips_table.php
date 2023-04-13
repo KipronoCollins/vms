@@ -24,6 +24,10 @@ class CreateTripsTable extends Migration
             $table->integer('odoMeterStart');
             $table->integer('odoMeterEnd');
             $table->integer('amount');
+            $table->integer('mileage');
+            $table->string('journeyStart');
+            $table->string('journeyEnd');
+            $table->integer('createdBy');
             $table->timestamps();
         });
     }

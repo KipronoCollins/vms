@@ -7,11 +7,11 @@
         <div class="block-header">
             <div class="row">
                 <div class="col-lg-7 col-md-6 col-sm-12">
-                    <h2>Stater Page</h2>
+                    <h2>Dashboard</h2>
                     <ul class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Aero</a></li>
-                        <li class="breadcrumb-item active">Pages</li>
-                        <li class="breadcrumb-item active">Stater Page</li>
+                        <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> VMS</a></li>
+                        <li class="breadcrumb-item active">Admin</li>
+                        <li class="breadcrumb-item active">Dashboard</li>
                     </ul>
                     <button class="btn btn-primary btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
                 </div>
@@ -22,14 +22,35 @@
         </div>
         <div class="container-fluid">
             <div class="row clearfix">
-                <div class="col-lg-12">
-                    <div class="card">
-                        <div class="header">
-                            <h2><strong>Stater</strong> page</h2>
-                        </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="card widget_2 big_icon traffic">
                         <div class="body">
-                            <h5>Stater page</h5>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                            <h6>Collections</h6>
+                            <h2>20 <small class="info">of 1Tb</small></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="card widget_2 big_icon sales">
+                        <div class="body">
+                            <h6>Expenses</h6>
+                            <h2>12% <small class="info">of 100</small></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="card widget_2 big_icon email">
+                        <div class="body">
+                            <h6>Users</h6>
+                            <h2>39 <small class="info">of 100</small></h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <div class="card widget_2 big_icon domains">
+                        <div class="body">
+                            <h6>Vechiles</h6>
+                            <h2>8 <small class="info">of 10</small></h2>
                         </div>
                     </div>
                 </div>
