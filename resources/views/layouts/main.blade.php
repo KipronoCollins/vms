@@ -10,9 +10,9 @@
 <title>VMS</title>
 <!-- Favicon-->
 <link rel="icon" href="favicon.ico" type="image/x-icon">
-<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href=" {{ asset('assets/plugins/bootstrap/css/bootstrap.min.css') }} ">
 <!-- Custom Css -->
-<link rel="stylesheet" href="assets/css/style.min.css">
+<link rel="stylesheet" href=" {{ asset('assets/css/style.min.css') }} ">
 </head>
 
 <body class="theme-blush">
@@ -20,7 +20,7 @@
 <!-- Page Loader -->
 <div class="page-loader-wrapper">
     <div class="loader">
-        <div class="m-t-30"><img class="zmdi-hc-spin" src="assets/images/loader.svg" width="48" height="48" alt="Aero"></div>
+        <div class="m-t-30"><img class="zmdi-hc-spin" src=" {{ asset('assets/images/loader.svg') }} " width="48" height="48" alt="Aero"></div>
         <p>Please wait...</p>
     </div>
 </div>
@@ -42,10 +42,10 @@
 @yield('content')
 
 <!-- Jquery Core Js --> 
-<script src="assets/bundles/libscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js --> 
-<script src="assets/bundles/vendorscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js --> 
+<script src=" {{ asset('assets/bundles/libscripts.bundle.js') }} "></script> <!-- Lib Scripts Plugin Js --> 
+<script src=" {{ asset('assets/bundles/vendorscripts.bundle.js') }} "></script> <!-- Lib Scripts Plugin Js --> 
 
-<script src="assets/bundles/mainscripts.bundle.js"></script>
+<script src=" {{ asset('assets/bundles/mainscripts.bundle.js') }} "></script>
 </body>
 
 </html>

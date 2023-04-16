@@ -15,6 +15,10 @@ class VehicleController extends Controller
     public function index()
     {
         //
+        $vehicles = Vehicle::get();
+
+        // return view("blog", compact("posts"));
+        return view("pages.admin.vehicles", compact("vehicles"));
     }
 
     /**
@@ -25,6 +29,7 @@ class VehicleController extends Controller
     public function create()
     {
         //
+        return view("pages.admin.addVehicle");
     }
 
     /**
@@ -36,6 +41,13 @@ class VehicleController extends Controller
     public function store(Request $request)
     {
         //
+        $vehicle = new Vehicle();
+        $vehicle->regNo = $request->regNo;
+        $vehicle->driver = '2';
+        $vehicle->model = $request->model;
+        $vehicle->engineNo = $request->engineNo;
+        $vehicle->save();
+        return redirect()->route('admin.vehicles');
     }
 
     /**

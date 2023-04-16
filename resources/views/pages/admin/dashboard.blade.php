@@ -49,7 +49,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-12">
                     <div class="card widget_2 big_icon domains">
                         <div class="body">
-                            <h6>Vechiles</h6>
+                            <h6>vehicles</h6>
                             <h2>8 <small class="info">of 10</small></h2>
                         </div>
                     </div>

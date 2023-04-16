@@ -7,11 +7,11 @@
         <div class="block-header">
             <div class="row">
                 <div class="col-lg-7 col-md-6 col-sm-12">
-                    <h2>Manage Users</h2>
+                    <h2>Manage Vehicles</h2>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> VMS</a></li>
                         <li class="breadcrumb-item"><a href="javascript:void(0);">Admin</a></li>
-                        <li class="breadcrumb-item active">Manage Users</li>
+                        <li class="breadcrumb-item active">Manage Vehicles</li>
                     </ul>
                     <button class="btn btn-primary btn-icon mobile_menu" type="button"><i class="zmdi zmdi-sort-amount-desc"></i></button>
                 </div>
@@ -28,36 +28,28 @@
                 <div class="col-lg-12 col-md-12 col-sm-12">
                     <div class="card">
                         <div class="header">
-                            <h2><strong>Manage</strong> Users</h2>
+                            <h2><strong>Manage</strong> Vehicles</h2>
                         </div>
                         <div class="body">
                             <div class="table-responsive">
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Username</th>
-                                            <th>ID Number</th>
-                                            <th>Role</th>
-                                            <th>Manage</th>
+                                            <th>Reg No</th>
+                                            <th>Model</th>
+                                            <th>Engine No</th>
+                                            <th>Expense</th>
+                                            <th>Trip</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach ($users as $user)
+                                        @foreach ($vehicles as $vehicle)
                                         <tr>
-                                            <th> {{ $user->name }} </th>
-                                            <td> {{ $user->email }} </td>
-                                            <td> {{ $user->username }} </td>
-                                            <td> {{ $user->idNumber }} </td>
-                                            <td>
-                                                @if ($user->roleId == 1 )
-                                                    Administrator
-                                                @else
-                                                    Conductor
-                                                @endif
-                                            </td>
-                                            <td> <a class="btn btn-info" href=" {{ route('admin.manageUser', $user->id ) }} " style="margin: 0%;">Manage</a> </td>
+                                            <th> {{ $vehicle->regNo }} </th>
+                                            <td> {{ $vehicle->model }} </td>
+                                            <td> {{ $vehicle->engineNo }} </td>
+                                            <td> <a class="btn btn-info" href=" {{ route('addExpense', $vehicle->id ) }} " style="margin: 0%;">Add Expense</a> </td>
+                                            <td> <a class="btn btn-primary" href=" {{ route('addTrip', $vehicle->id ) }} " style="margin: 0%;">Add Trip</a> </td>
                                         </tr>
                                         @endforeach
                                     </tbody>

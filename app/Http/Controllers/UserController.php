@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -30,6 +31,7 @@ class UserController extends Controller
     public function create()
     {
         //
+        return view("pages.admin.addUser");
     }
 
     /**
@@ -41,6 +43,21 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
+        $user = new User();
+        $user->name = $request->name;
+        $user->idNumber = $request->idNumber;
+        $user->username = $request->userName;
+        $user->email = $request->email;
+        $user->password =  Hash::make($request->password);
+        if ($request->admin == "on") {
+            $user->roleId = '1';
+        } else if($request->conductor == "on") {
+            $user->roleId = '2';
+        } else if($request->driver == "on") {
+            $user->roleId = '3';
+        }
+        $user->save();
+        return redirect()->route('admin.users');
     }
 
     /**
@@ -60,9 +77,13 @@ class UserController extends Controller
      * @param  \App\Models\Route  $route
      * @return \Illuminate\Http\Response
      */
-    public function edit(Route $route)
+    public function edit($user)
     {
         //
+
+        $user = User::find($user);
+
+        return view("pages.admin.manageUser", compact("user"));
     }
 
     /**
@@ -72,9 +93,21 @@ class UserController extends Controller
      * @param  \App\Models\Route  $route
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Route $route)
+    public function update(Request $request)
     {
         //
+        $user = User::find($request->userId);
+        $user->name = $request->name;
+        $user->idNumber = $request->idNumber;
+        $user->username = $request->userName;
+        $user->email = $request->email;
+        if ($request->email != null) {
+            Hash::make($request->password);
+        }
+        $user->update();
+        return redirect()->route('admin.users');
+
+        
     }
 
     /**

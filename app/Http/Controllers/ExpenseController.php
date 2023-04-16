@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Expense;
 use Illuminate\Http\Request;
+use Auth;
 
 class ExpenseController extends Controller
 {
@@ -22,9 +23,11 @@ class ExpenseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($vehicleId)
     {
         //
+        
+        return view("pages.admin.addExpense", compact("vehicleId"));
     }
 
     /**
@@ -36,6 +39,13 @@ class ExpenseController extends Controller
     public function store(Request $request)
     {
         //
+        $expense = new Expense();
+        $expense->vehicleId = $request->vehicleId;
+        $expense->name = $request->name;
+        $expense->amount = $request->amount;
+        $expense->createdBy =  Auth::id();
+        $expense->save();
+        return redirect()->route('admin.vehicles');
     }
 
     /**
